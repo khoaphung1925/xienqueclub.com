@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đơn hàng</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <form id="orderForm">
+        <select id="mon" onchange="calculateTotal()">
+            <!-- Các options sẽ được thêm vào bằng JavaScript -->
+        </select>
+        <select id="size" onchange="calculateTotal()">
+            <!-- Các options sẽ được thêm vào bằng JavaScript -->
+        </select>
+        <select id="topping1" onchange="calculateTotal()">
+            <!-- Các options sẽ được thêm vào bằng JavaScript -->
+        </select>
+        <select id="topping2" onchange="calculateTotal()">
+            <!-- Các options sẽ được thêm vào bằng JavaScript -->
+        </select>
+        <select id="topping3" onchange="calculateTotal()">
+            <!-- Các options sẽ được thêm vào bằng JavaScript -->
+        </select>
+        <input type="text" id="total" readonly>
+        <button type="button" onclick="handlePlaceOrder()">Đặt Hàng</button>
+
+        <!-- Phần còn lại của form -->
+<input type="text" id="customerName" placeholder="Tên Khách Hàng">
+<label for="paymentStatus">Đã Thanh Toán:</label>
+<input type="checkbox" id="paymentStatus">
+
+<!-- Các phần tử khác của form và các nút -->
+
+        
+    </form>
+
+    <img id="qrCodeImage" src="access/img.png" alt="Mã QR Đơn Hàng">
+    <button id="downloadButton" onclick="downloadQRCode()">Tải Mã QR</button>
+    <button id="saveButton" onclick="generateQRCode(orderDetails)">Lưu</button>
+
+    <button id="checkOrderButton" onclick="checkOrder()">Kiểm Tra Đơn Hàng</button>
+
+    <script>
+        function checkOrder() {
+            window.open('check.html', '_blank');
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
